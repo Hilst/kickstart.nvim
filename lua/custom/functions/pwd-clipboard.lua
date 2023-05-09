@@ -7,5 +7,11 @@ return {
     -- register it in '+' vim register (clipboard)
     print(pwd)
     vim.fn.setreg('+', pwd)
-  end, {})
+  end, {}),
+
+  -- Remap :Pwd command
+  vim.keymap.set('n', '<leader>q', function()
+    vim.cmd([[Pwd]])
+  end)
+
 }
