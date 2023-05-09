@@ -92,7 +92,7 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      char = '>>',
+      char = '>',
       show_trailing_blankline_indent = false,
     },
   },
@@ -132,6 +132,7 @@ require('lazy').setup({
   require 'kickstart.plugins.debug',
 
   { import = 'custom.plugins' },
+  { import = 'custom.functions' },
 }, {})
 
 -- [[ Setting options ]]
@@ -242,7 +243,7 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  auto_install = true,
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
