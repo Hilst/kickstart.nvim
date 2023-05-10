@@ -1,3 +1,5 @@
+print('parse pwd-clipboard')
+
 return {
   vim.api.nvim_create_user_command("Pwd", function()
     local pwd = vim.fn.getcwd()
@@ -10,7 +12,8 @@ return {
   end, {}),
 
   -- Remap :Pwd command
-  vim.keymap.set('n', '<leader>q', function()
+  vim.keymap.set('n', '<leader>qw', function()
+    print('working ...')
     vim.cmd([[Pwd]])
   end)
 

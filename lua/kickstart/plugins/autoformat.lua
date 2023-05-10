@@ -3,6 +3,8 @@
 -- Use your language server to automatically format your code on save.
 -- Adds additional commands as well to manage the behavior
 
+print('parse autoformat')
+
 return {
   'neovim/nvim-lspconfig',
   config = function()
