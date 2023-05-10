@@ -5,10 +5,10 @@ return {
     local runner = opts.args
     local runners_table = {
       gpp = function()
-        require ''
+        require 'custom.functions.runners.gpp'
       end,
       golang = function()
-        require ''
+        require 'custom.functions.runners.golang'
       end,
       default = function()
         print('Invalid runner')

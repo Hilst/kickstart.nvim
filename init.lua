@@ -130,6 +130,7 @@ require('lazy').setup({
   require 'kickstart.plugins.autoformat',
   require 'kickstart.plugins.debug',
   require 'custom.functions.pwd-clipboard',
+  require 'custom.functions.set-runner',
 }, {})
 
 -- [[ Setting options ]]
@@ -187,6 +188,13 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- Quick up and down
 vim.keymap.set('n', 'K', '10k')
 vim.keymap.set('n', 'J', '10j')
+
+-- VSplit left and right
+vim.keymap.set('n', 'H', '<C-w>h')
+vim.keymap.set('n', 'L', '<C-w>l')
+
+-- Terminal mode mappings
+vim.keymap.set('t', '<leader>\\', '<C-\\><C-n>')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
