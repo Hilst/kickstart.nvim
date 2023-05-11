@@ -7,6 +7,9 @@ local runners_table = {
   golang = function()
     require 'custom.functions.runners.golang'
   end,
+  rust = function()
+    require 'custom.functions.runners.rust'
+  end,
   default = function()
     print('Invalid runner')
   end
