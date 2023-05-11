@@ -33,5 +33,23 @@ return {
       first = f,
       last = l
     }
+  end,
+  auto_complete_file_func = function(_, _, _, filetype)
+    if not filetype then return {} end
+    local cwd = vim.fn.getcwd()
+    local glob = vim.fn.globpath(cwd, "**/*")
+    local s = vim.fn.split(glob, "\n")
+
+    local r = {}
+    for _, value in pairs(s) do
+      local v = string.gsub(value, cwd, "")
+
+      local foundFileType = string.find(v, "." .. filetype, nil, true)
+
+      if foundFileType and (foundFileType + string.len(filetype)) == string.len(v) then
+        table.insert(r, v)
+      end
+    end
+    return r
   end
 }
