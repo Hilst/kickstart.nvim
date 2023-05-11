@@ -376,6 +376,13 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+
+  yamlls = {
+    yaml = {
+      -- FIX [E warning] for key-ordering by utf-8
+      keyOrdering = false,
+    }
+  }
 }
 
 -- Setup neovim lua configuration
